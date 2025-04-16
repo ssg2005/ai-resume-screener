@@ -2,27 +2,55 @@
 
 ## Overview
 
-This system aims to match job titles with resumes based on textual similarity and categorize them into tech and non-tech roles. It processes job descriptions and resume titles, calculates cosine similarity between them using pre-trained word embeddings (Word2Vec), and categorizes job roles based on specific keywords. It also provides insights into job demand, resume length, and skill analysis.
+The **Job Matching & Analysis System** matches job titles with resume titles based on semantic similarity using NLP and Word Embeddings. It also categorizes roles into **Tech** and **Non-Tech**, analyzes job demand trends, skill frequencies, and visualizes key insights.
+
+---
 
 ## Key Features
 
-1. **Text Cleaning**: Cleans job titles, job descriptions, and resume titles using natural language processing (NLP) techniques, including tokenization, lemmatization, and stopword removal.
-   
-2. **Fuzzy Matching**: Matches resumes with job titles based on textual similarity, initially using fuzzy matching and gradually applying relaxed matching thresholds.
+### 1. Text Cleaning & Preprocessing
+- Utilizes **NLTK** for advanced text preprocessing.
+- Key Steps:
+  - Lowercasing
+  - Removing punctuation
+  - Tokenization
+  - Stopword removal
+  - Lemmatization
 
-3. **Word Embedding Calculation**: Computes word embeddings for both resumes and job titles using Google's pre-trained Word2Vec model to capture semantic relationships.
+### 2. Fuzzy Matching
+- Leverages `fuzzywuzzy` for approximate string matching between resume and job titles.
+- Features:
+  - Strict-to-relaxed threshold matching
+  - Handles minor typos and phrasing variations
 
-4. **Cosine Similarity**: Calculates the cosine similarity between resume titles and job titles, helping to assess the degree of relevance between them.
+### 3. Word Embedding with Word2Vec
+- Embeds job descriptions and resumes using **Google's pre-trained Word2Vec** model via `gensim`.
+- Captures semantic relationships for better match accuracy.
 
-5. **Job Demand Analysis**: Analyzes the frequency of job titles to identify the most common job postings and determine demand in tech and non-tech roles.
+### 4. Cosine Similarity
+- Calculates **cosine similarity** between embedded vectors.
+- Helps determine how closely a resume matches a job title semantically.
 
-6. **Visualization**: Plots a scatter plot of resume length versus similarity score to identify any correlations between content length and job match strength.
+### 5. Job Demand Analysis
+- Analyzes frequency distribution of job titles.
+- Categorizes job roles into:
+  - Tech Roles (e.g., Software Engineer, Data Scientist)
+  - Non-Tech Roles (e.g., HR Manager, Sales Executive)
 
-7. **Skill Frequency Analysis**: Analyzes the skills (abilities) mentioned in resumes, identifying the most frequently mentioned skills.
+### 6. Visualization
+- Scatter plot of:
+  - Resume length vs. similarity score
+  - Reveals insights into content quality and job match strength
+
+### 7. Skill Frequency Analysis
+- Extracts skills from resume content.
+- Displays most frequently mentioned abilities.
+
+---
 
 ## Prerequisites
 
-Before running the code, ensure the following packages are installed:
+Before running the system, install the following dependencies:
 
 ```bash
-pip install pandas nltk fuzzywuzzy gensim matplotlib
+pip install pandas nltk fuzzywuzzy[speedup] gensim matplotlib
