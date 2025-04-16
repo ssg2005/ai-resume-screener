@@ -54,3 +54,30 @@ Before running the system, install the following dependencies:
 
 ```bash
 pip install pandas nltk fuzzywuzzy[speedup] gensim matplotlib
+
+```
+
+---
+
+## Sample Screenshots
+
+### 1. Top 10 Job Titles with Strongest Resume Matches:
+
+![image](https://github.com/user-attachments/assets/75dcff09-7421-45e6-9003-b6e88521bef8)
+
+### 2. Job Titles with the Highest Demand (Based on Job Posting Frequency) AND Top 10 Tech Jobs in Demand:
+
+![image](https://github.com/user-attachments/assets/04bd8099-26d8-45ed-bafc-18a8a96f50c6)
+
+### 3. Resume Length vs. Similarity Score:
+
+![image](https://github.com/user-attachments/assets/bd5b0cb7-e9e4-46d3-b14f-2c86ead6985b)
+
+### 4. Count how often each skill appears in the resumes:
+
+![image](https://github.com/user-attachments/assets/cdde2d2a-5b3c-44c5-ace5-31015d0229f2)
+
+## Credits
+- Developed by: Sushant Singh Gautam
+
+
